@@ -7,7 +7,7 @@ def get_password_tuple(line):
     return (lower, upper, letter, password)
 
 
-passwords = [get_password_tuple(l.strip()) for l in open("day02.input").readlines()]
+passwords = [get_password_tuple(l) for l in open("day02.input").read().splitlines()]
 p1_valid_count = 0
 p2_valid_count = 0
 
