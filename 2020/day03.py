@@ -1,6 +1,6 @@
 from operator import mul
 
-tree_map = open("day03.input").read().split()
+tree_map = open("day03.input").read().splitlines()
 
 
 def get_collisions(x=1, y=1):
@@ -16,14 +16,12 @@ def get_collisions(x=1, y=1):
         loc_y += y
         loc_x = (loc_x + x) % max_x
 
-    print tree_count
     return tree_count
 
 print "Part 1: ", get_collisions(x=3)
 
 slopes = [(1, 1), (3, 1), (5, 1), (7, 1), (1, 2)]
 collisions = [get_collisions(*coords) for coords in slopes]
-print collisions
 
 
 print "Part 2: ", reduce(mul, collisions, 1)
