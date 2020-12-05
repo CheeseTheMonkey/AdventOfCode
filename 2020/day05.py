@@ -1,19 +1,21 @@
 
 
 class Seat(object):
+    MAP = {
+        'F': '0',
+        'L': '0',
+        'B': '1',
+        'R': '1'
+    }
     def __init__(self, identifier):
-        self.row = int(
-            ''.join(['0b'] + [{'F':'0', 'B':'1'}[char] for char in identifier[:7]]), 2)
-        self.column = int(
-            ''.join(['0b'] + [{'L':'0', 'R':'1'}[char] for char in identifier[7:]]), 2)
-
-    def seat_ID(self):
-        return (self.row * 8) + self.column
+        self.seat_ID = int(''.join([self.MAP[char] for char in identifier]), 2)
+        self.row = int(''.join([self.MAP[char] for char in identifier[:7]]), 2)
+        self.column = int(''.join([self.MAP[char] for char in identifier[7:]]), 2)
 
 data = open("day05.input").read().splitlines()
 
 seats = [Seat(line) for line in data]
-seat_ids = [seat.seat_ID() for seat in seats]
+seat_ids = [seat.seat_ID for seat in seats]
 max_seat_num = max(seat_ids)
 min_seat_num = min(seat_ids)
 
