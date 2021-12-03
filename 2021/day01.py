@@ -1,9 +1,9 @@
 
-from aoc_common import prep_file_by_name
+from aoc_common import read_file_by_int
 
 
-#data = prep_file_by_name("day01.testinput")
-data = prep_file_by_name("day01.input")
+#data = read_file_by_int("day01.testinput")
+data = read_file_by_int("day01.input")
 
 data = [int(a) for a in data]
 
