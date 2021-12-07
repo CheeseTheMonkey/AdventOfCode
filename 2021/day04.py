@@ -12,8 +12,8 @@ def has_won(boards):
 def score(board, call):
     return sum(i for line in board for i in line if i != 'x') * call
 
-#calls, *boards = read_file("day04.testinput"). split("\n\n")
-calls, *boards = read_file("day04.input"). split("\n\n")
+#calls, *boards = read_file("day04.testinput").split("\n\n")
+calls, *boards = read_file("day04.input").split("\n\n")
 
 calls = [int(i) for i in calls.split(",")]
 boards = [[[int(i) for i in line.split()] for line in board.split('\n')] for board in boards]
