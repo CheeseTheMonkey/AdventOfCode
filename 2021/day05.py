@@ -1,10 +1,6 @@
 
 
-from aoc_common import read_file_by_line
-
-def print_grid(grid):
-    for row in grid:
-        print("".join((a and str(a) or "." for a in row)))
+from aoc_common import read_file_by_line, print_grid
 
 def draw_lines(lines, grid, diagonals=False):
     for x1, y1, x2, y2 in lines:

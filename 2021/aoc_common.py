@@ -7,3 +7,8 @@ def read_file_by_line(filename):
 
 def read_file_by_int(filename):
     return [int(a) for a in read_file_by_line(filename)]
+
+def print_grid(grid):
+    for row in grid:
+        print("".join((a and str(a) or "." for a in row)))
+
