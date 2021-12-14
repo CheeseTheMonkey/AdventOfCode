@@ -20,8 +20,8 @@ def print_grid(grid):
 
 class Coord:
     def __init__(self, x, y):
-        self.x = x
-        self.y = y
+        self.x = int(x)
+        self.y = int(y)
 
     def __add__(self, coord):
         if not isinstance(coord, Coord):
