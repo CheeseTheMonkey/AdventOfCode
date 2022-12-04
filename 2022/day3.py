@@ -16,11 +16,11 @@ for line in f:
     line = line.strip()
     one = set(line[:len(line)//2])
     two = set(line[len(line)//2:])
-    common = get_priority(ord(list(one.intersection(two))[0]))
+    common = get_priority(ord(list(one & two)[0]))
     priorities += common
     group.append(set(line))
     if len(group) == 3:
-        group_priorities += get_priority(ord(list(group[0].intersection(group[1]).intersection(group[2]))[0]))
+        group_priorities += get_priority(ord(list(group[0] & group[1] & group[2])[0]))
         group = []
 
 
