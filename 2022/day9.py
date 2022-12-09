@@ -33,34 +33,32 @@ def move(count, rope, movement, visited):
     for _ in range(count):
         rope[0] += movement
         for i in range(len(rope) - 1):
+            x, y = 0, 0
             if rope[i][0] - rope[i+1][0] > 1:
+                x = 1
                 if rope[i][1] - rope[i+1][1] > 0:
-                    rope[i+1] += (1, 1)
+                    y = 1
                 elif rope[i+1][1] - rope[i][1] > 0:
-                    rope[i+1] += (1, -1)
-                else:
-                    rope[i+1] += (1, 0)
+                    y = -1
             elif rope[i+1][0] - rope[i][0] > 1:
+                x = -1
                 if rope[i][1] - rope[i+1][1] > 0:
-                    rope[i+1] += (-1, 1)
+                    y = 1
                 elif rope[i+1][1] - rope[i][1] > 0:
-                    rope[i+1] += (-1, -1)
-                else:
-                    rope[i+1] += (-1, 0)
+                    y = -1
             elif rope[i][1] - rope[i+1][1] > 1:
+                y = 1
                 if rope[i][0] - rope[i+1][0] > 0:
-                    rope[i+1] += (1, 1)
+                    x = 1
                 elif rope[i+1][0] - rope[i][0] > 0:
-                    rope[i+1] += (-1, 1)
-                else:
-                    rope[i+1] += (0, 1)
+                    x = -1
             elif rope[i+1][1] - rope[i][1] > 1:
+                y = -1
                 if rope[i][0] - rope[i+1][0] > 0:
-                    rope[i+1] += (1, -1)
+                    x = 1
                 elif rope[i+1][0] - rope[i][0] > 0:
-                    rope[i+1] += (-1, -1)
-                else:
-                    rope[i+1] += (0, -1)
+                    x = -1
+            rope[i+1] += (x,y)
         visited.add(rope[-1])
 
     return rope, visited
