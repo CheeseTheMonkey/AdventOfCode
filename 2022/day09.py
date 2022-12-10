@@ -1,5 +1,5 @@
 
-movements = [line.split(' ') for line in open("day9.input").read().splitlines()]
+movements = [line.split(' ') for line in open("day09.input").read().splitlines()]
 #movements = [line.split(' ') for line in """R 4
 #U 4
 #L 3

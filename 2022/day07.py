@@ -2,8 +2,8 @@
 
 from operator import attrgetter
 
-# = open("day7.test")
-f = open("day7.input")
+# = open("day07.test")
+f = open("day07.input")
 
 
 class File:

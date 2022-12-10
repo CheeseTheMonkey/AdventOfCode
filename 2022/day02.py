@@ -1,6 +1,6 @@
 
-#f = open("day2.test", "r")
-f = open("day2.input", "r")
+#f = open("day02.test", "r")
+f = open("day02.input", "r")
 
 score = 0
 outcome = 0

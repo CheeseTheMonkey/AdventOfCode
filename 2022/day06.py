@@ -8,7 +8,7 @@ text ="nppdvjthqldpwncqszvftbrmjlhg"
 text = "nznrnfrfntjfmvfwmzdfjlvtqnbhcprsg"
 text = "zcfzfwzzqfrljwzlrfnpqdbhtmscgvjw"
 
-text = open("day6.input").read().strip()
+text = open("day06.input").read().strip()
 
 start_of_packet = 0
 start_of_message = 0

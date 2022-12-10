@@ -1,7 +1,7 @@
 
 
-#f = open("day3.test", "r")
-f = open("day3.input", "r")
+#f = open("day03.test", "r")
+f = open("day03.input", "r")
 
 def get_priority(ordinal):
     if ordinal > 96:

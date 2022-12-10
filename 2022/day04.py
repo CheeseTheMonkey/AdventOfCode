@@ -1,7 +1,7 @@
 
 
-#f = open("day4.test", "r")
-f = open("day4.input", "r")
+#f = open("day04.test", "r")
+f = open("day04.input", "r")
 
 part1 = 0
 part2 = 0
