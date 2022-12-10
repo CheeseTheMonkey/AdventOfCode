@@ -1,8 +1,8 @@
 from collections import Counter
 
 
-#in_cals = [l.strip() for l in open("day1.test").readlines()]
-in_cals = [l.strip() for l in open("day1.input").readlines()]
+#in_cals = [l.strip() for l in open("day01.test").readlines()]
+in_cals = [l.strip() for l in open("day01.input").readlines()]
 
 elf_count = 1
 elves = Counter()

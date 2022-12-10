@@ -31,8 +31,8 @@ def follow_instructions_cm9001(input_crates, instructions):
     return crates
 
 
-#with open("day5.test", "r") as f:
-with open("day5.input", "r") as f:
+#with open("day05.test", "r") as f:
+with open("day05.input", "r") as f:
     text = f.read()
 
 crate_input, instructions = [t.split('\n') for t in text.split("\n\n")]

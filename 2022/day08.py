@@ -26,8 +26,8 @@ def process(i, j, trees, imax, jmax):
     return visible, score
 
 tree_map = {}
-#input_str = open("day8.test").read()
-input_str = open("day8.input").read()
+#input_str = open("day08.test").read()
+input_str = open("day08.input").read()
 
 for i, line in enumerate(input_str.splitlines()):
     for j, height in enumerate(line):
