@@ -55,6 +55,7 @@ def operate(monkeys, loops, calmdown=True):
             while monkey['items']:
                 item = monkey['items'].pop()
                 operation = monkey['operation']
+                Some nonsense here
                 if "old" in operation:
                     operation = operation.replace("old", str(item))
                 item = arithmeticEval(" ".join((str(item), operation)))
