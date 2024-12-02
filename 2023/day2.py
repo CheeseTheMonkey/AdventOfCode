@@ -9,12 +9,12 @@ class Cubes:
     green: int = 0
     blue: int = 0
 
-    def __le__(self, other):
+    def __le__(self, other: Cubes):
         attrs = ['red', 'green', 'blue']
         return all((getattr(self, attr) <= getattr(other, attr) for attr in attrs))
 
     def __str__(self):
-        return f'{self.__name__}: {self.red} red, {self.green} green, {self.blue} blue'
+        return f'{Cubes.__name__}: {self.red} red, {self.green} green, {self.blue} blue'
 
     def power(self):
         return self.red * self.green * self.blue
@@ -23,7 +23,7 @@ class Cubes:
 class Hand(Cubes):
 
     @classmethod
-    def from_hand_string(cls, hand: str) -> type[Cubes]:
+    def from_hand_string(cls, hand: str) -> Hand:
         vals = hand.split(', ')
         cubes = cls()
         for val in vals:
@@ -38,17 +38,17 @@ class Game:
     hands: list[Hand] = field(default_factory=list)
 
     @classmethod
-    def from_game_line(self, game_line: str) -> type[Game]:
+    def from_game_line(self, game_line: str) -> Game:
         game, hands = game_line.split(': ')
         return Game(game, [Hand.from_hand_string(hand) for hand in hands.split('; ')])
 
     def game_number(self) -> int:
         return int(self.game.split()[1])
 
-    def is_possible(self, cubes: type[Cubes]) -> bool:
+    def is_possible(self, cubes: Cubes) -> bool:
         return all((hand <= cubes for hand in self.hands))
 
-    def min_cubes_needed(self) -> type[Cubes]:
+    def min_cubes_needed(self) -> Cubes:
         return Cubes(
             max(
                 (hand.red for hand in self.hands)

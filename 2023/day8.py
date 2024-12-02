@@ -19,12 +19,12 @@ def main():
     
     node = "AAA"
     route = cycle(lr)
-    steps = 0
+    stepcount = 0
     while node != "ZZZ":
         node = node_map[node][next(route)]
-        steps += 1
+        stepcount += 1
     
-    print(f"Part One: {steps}")
+    print(f"Part One: {stepcount}")
 
     nodes = [node for node in node_map.keys() if node.endswith("A")]
     steps = []

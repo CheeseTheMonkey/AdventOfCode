@@ -1,5 +1,6 @@
 
 from common import read_input
+from itertools import pairwise
 
 
 def get_next_number_in_sequence(sequence: list[int], forwards: bool= True) -> int:
@@ -8,11 +9,11 @@ def get_next_number_in_sequence(sequence: list[int], forwards: bool= True) -> in
         return 0
     if forwards:
         return sequence[-1] + get_next_number_in_sequence(
-            [sequence[i+1] - sequence[i] for i in range(len(sequence) - 1)]
+            [b - a for a, b in pairwise(sequence)]
         )
     else:
         return sequence[0] - get_next_number_in_sequence(
-            [sequence[i+1] - sequence[i] for i in range(len(sequence) - 1)], False
+            [b - a for a, b in pairwise(sequence)], False
         )
 
 
